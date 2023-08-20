@@ -15,22 +15,15 @@ rm -rf slowdns.sh
 rm -rf udp.sh
 rm -rf vpn.sh
 rm -rf openvpn.sh
-rm -rf log-install.txt
-rm -rf /usr/bin/usernew
-rm -rf /usr/bin/trial
 rm -rf /root/domain
 echo "\e[1;32m Update Menu.. \e[0m"
 sleep 1
-wget -q -O /usr/bin/usernew https://raw.githubusercontent.com/hokagelegend2023/alpha3/main/udp-custom/ssh/usernew.sh
-wget -q -O /usr/bin/trial https://raw.githubusercontent.com/hokagelegend2023/alpha3/main/udp-custom/ssh/trial.sh
 echo "\e[1;32m Proses Download Script Slowdns.. \e[0m"
 wget https://raw.githubusercontent.com/hokagelegend2023/alpha3/main/udp-custom/slowdns//slowdns.sh && chmod +x slowdns.sh && ./slowdns.sh
 sleep 1
 echo "\e[1;32m Proses Download Script OpenVPN.. \e[0m"
 wget https://raw.githubusercontent.com/hokagelegend2023/alpha3/main/udp-custom/openvpn/openvpn.sh && chmod +x openvpn.sh && ./openvpn.sh
 sleep 1
-chmod +x /usr/bin/usernew
-chmod +x /usr/bin/trial
 rm -rf /root/udp
 mkdir -p /root/udp
 # install udp-custom
