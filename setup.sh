@@ -248,9 +248,17 @@ echo "Log Trojan Account " > /etc/log-create-trojan.log
 fi
 if [ ! -f "/etc/log-create-shadowsocks.log" ]; then
 echo "Log Shadowsocks Account " > /etc/log-create-shadowsocks.log
+if [ -f "/root/log-install.txt" ]; then
+rm /root/log-install.txt > /dev/null 2>&1
+fi
+if [ -f "/etc/afak.conf" ]; then
+rm /etc/afak.conf > /dev/null 2>&1
+fi
+if [ ! -f "/etc/log-create-user.log" ]; then
+echo "Log All Account " > /etc/log-create-user.log
 fi
 history -c
-serverV=$( curl -sS https://raw.githubusercontent.com/hokagelegend2023/akses/main/versi  )
+serverV=$( curl -sS https://raw.githubusercontent.com/hokagelegend2023/ipmini/main/versi  )
 echo $serverV > /opt/.ver
 aureb=$(cat /home/re_otm)
 b=11
@@ -336,15 +344,22 @@ echo "   - Restore Data" | tee -a log-install.txt
 echo "   - Auto Delete Expired Account" | tee -a log-install.txt
 echo "   - Full Orders For Various Services" | tee -a log-install.txt
 echo "   - White Label" | tee -a log-install.txt
-echo "   - Installation Log --> /root/log-install.txt"  | tee -a log-install.txt
-echo "  ====================================  | tee -a log-install.txt
-echo "       HOKAGE LEGEND VPN PREMIUM    | tee -a log-install.txt
+echo "                                              | tee -a log-install.txt
+echo "  ====================================        | tee -a log-install.txt
+echo "       HOKAGE LEGEND VPN PREMIUM              | tee -a log-install.txt
 echo " -------------------------------------------  | tee -a log-install.txt
-echo " Reboot 15 Sec"
+echo -e ""
+echo ""
+echo "" | tee -a log-install.txt
 sleep 15
 rm /root/setup.sh >/dev/null 2>&1
 rm /root/ins-xray.sh >/dev/null 2>&1
 rm /root/insshws.sh >/dev/null 2>&1
 rm /root/updatemenu.sh >/dev/null 2>&1
 rm /root/udp.sh >/dev/null 2>&1
+secs_to_human "$(($(date +%s) - ${start}))" | tee -a log-install.txt
+echo -e ""
+echo " Auto reboot in 10 Seconds "
+sleep 10
+rm -rf setup.sh
 reboot
