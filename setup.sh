@@ -272,11 +272,11 @@ curl -sS ipv4.icanhazip.com > /etc/myipvps
 echo " "
 echo "Installation has been completed!!"echo " "
 echo "===============================================================" | tee -a log-install.txt
-echo "" | tee -a log-install.txt
+echo ""
 echo "--------------------------------------------------------------" | tee -a log-install.txt
-echo "====================================        | tee -a log-install.txt 
-echo "       HOKAGE LEGEND VPN PREMIUM            | tee -a log-install.txt
-echo "------------------------------------------- | tee -a log-install.txt
+echo "========================================="  | tee -a log-install.txt 
+echo "       HOKAGE LEGEND VPN PREMIUM          "  | tee -a log-install.txt
+echo "-------------------------------------------" | tee -a log-install.txt
 echo "   >>> Service & Port"  | tee -a log-install.txt
 echo "   - SlowDNS SSH             : ALL Port SSH"  | tee -a log-install.txt
 echo "   - OpenSSH                 : 22, 2253"  | tee -a log-install.txt
@@ -341,10 +341,10 @@ echo "   - Restore Data" | tee -a log-install.txt
 echo "   - Auto Delete Expired Account" | tee -a log-install.txt
 echo "   - Full Orders For Various Services" | tee -a log-install.txt
 echo "   - White Label" | tee -a log-install.txt
-echo "                                              | tee -a log-install.txt
-echo "  ====================================        | tee -a log-install.txt
-echo "       HOKAGE LEGEND VPN PREMIUM              | tee -a log-install.txt
-echo " -------------------------------------------  | tee -a log-install.txt
+echo ""
+echo "  ==================================== "       | tee -a log-install.txt
+echo "       HOKAGE LEGEND VPN PREMIUM   "           | tee -a log-install.txt
+echo " ------------------------------------------- " | tee -a log-install.txt
 echo -e ""
 echo ""
 echo "" | tee -a log-install.txt
