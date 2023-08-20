@@ -91,6 +91,13 @@ else
     status_wstdb="${RED}OFF${NC}"
 fi
 
+# // SSH Websocket Proxy Dropbear
+udp=$( systemctl status udp-custom | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
+if [[ $udp == "running" ]]; then
+    status_udp="${GREEN}ON${NC}"
+else
+    status_udp="${RED}OFF${NC}"
+fi
 
 # // nginx
 nginx=$( systemctl status nginx | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
@@ -206,9 +213,11 @@ echo -e "$COLOR1  $NC Current Domain : $(cat /etc/xray/domain)          "
 echo -e "$COLOR1  $NC IP-VPS         : ${COLOR1}$IPVPS${NC}         "
 echo -e "$COLOR1 <<─────────────────────────────────────────────────────>>${NC}"
 echo -e "$COLOR1┌──────────────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1│$NC [ SSH WS   : ${status_wst} ]  [ XRAY : ${status_xray} ]      [ NGINX : ${status_nginx} ]     $COLOR1│$NC"
+echo -e "$COLOR1│$NC [ SSH WS   : ${status_wst} ]    [ XRAY : ${status_xray} ]      [ NGINX : ${status_nginx} ]   $COLOR1│$NC"
 echo -e "$COLOR1│$NC                                                          $COLOR1│$NC"
-echo -e "$COLOR1│$NC [ SW-SHOCK : ${status_xray} ]  [ DROPBEAR : ${status_dropbear} ]  [ Slow DNS : ${status_sldns} ]  $COLOR1│$NC"
+echo -e "$COLOR1│$NC [ SW-SHOCK : ${status_xray} ]    [ DROPBEAR : ${status_dropbear} ]  [ Slow DNS : ${status_sldns} ]$COLOR1│$NC"
+echo -e "$COLOR1│$NC                                                          $COLOR1│$NC"
+echo -e "$COLOR1│$NC [ UDP-COSTUM : ${status_udp} ]  [ DROPBEAR : ${status_dropbear} ]  [ Slow DNS : ${status_sldns} ]$COLOR1│$NC"
 echo -e "$COLOR1│$NC                                                          $COLOR1│$NC"
 echo -e "$COLOR1└──────────────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌───────────────────────────────────────────────────────────┐${NC}"
