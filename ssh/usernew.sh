@@ -124,18 +124,20 @@ echo -e "$domen:1-65350@$Login:$Pass" | tee -a /etc/log-create-ssh.log
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-ssh.log
 echo -e "\E[0;41;36m          CONFIG OPENVPN            \E[0m" | tee -a /etc/log-create-ssh.log
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-ssh.log
-echo -e "OpenVPN TCP : http://$MYIP:86/client-tcp-$tcp.ovpn.html" | tee -a /etc/log-create-ssh.log
+echo -e "OpenVPN TCP : http://$MYIP:86/client-tcp-$tcp.ovpn" | tee -a /etc/log-create-ssh.log
 echo -e ""
-echo -e "OpenVPN UDP : http://$MYIP:86/client-tcp-$udp.ovpn.html" | tee -a /etc/log-create-ssh.log
+echo -e "OpenVPN UDP : http://$MYIP:86/client-tcp-$udp.ovpn" | tee -a /etc/log-create-ssh.log
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-ssh.log
 echo -e "Payload WSS" | tee -a /etc/log-create-ssh.log
 echo -e "
-GET wss://isi_bug_disini HTTP/1.1[crlf]Host: ${domen}[crlf]Upgrade: websocket[crlf][crlf]
+GET wss://isi_bug_disini HTTP/1.1[crlf]
+Host: ${domen}[crlf]Upgrade: websocket[crlf][crlf]
 " | tee -a /etc/log-create-ssh.log
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-ssh.log
 echo -e "Payload WS" | tee -a /etc/log-create-ssh.log
 echo -e "
-GET / HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf]
+GET / HTTP/1.1[crlf]
+Host: $domen[crlf]Upgrade: websocket[crlf][crlf]
 " | tee -a /etc/log-create-ssh.log
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-ssh.log
 fi
