@@ -1,6 +1,8 @@
 # SCRYPT LANGSUNG INSTAL DAN BANYAK TAMBAHAN ADD ONS BIAR MANTABZZZ... 
 
-# Order from me (MUST READ) before using
+# BACA DENGAN BAIK CARA PENGGUNAAN NYA OK..!!!
+
+
 
 </p> 
 <h2 align="center"> Supported Linux Distribution</h2>
@@ -41,6 +43,7 @@
 ## Service & Port:
 <br>
 - OpenSSH                  : 22<br>
+- Slow Dns                 : ALL PORT <br>
 - SSH Websocket            : 80<br>
 - SSH SSL Websocket        : 443<br>
 - Stunnel4                 : 222, 777<br>
@@ -59,6 +62,7 @@
 - Vless gRPC               : 443<br>
 - Trojan gRPC              : 443<br>
 - Shadowsocks gRPC         : 443<br>
+- UDP COSTUM               : 1-65350<br>
 <br>
   
 ## Feature
