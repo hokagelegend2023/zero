@@ -109,6 +109,15 @@ else
 fi
 
 # // SSH Websocket Proxy
+sldns=$( systemctl status server-sldns | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
+if [[ $sldns == "running" ]]; then
+    status_sldns="${GREEN}ON${NC}"
+else
+    status_sldns="${RED}OFF${NC}"
+fi
+
+
+# // SSH Websocket Proxy
 dropbear=$( systemctl status dropbear | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
 if [[ $xray == "running" ]]; then
     status_dropbear="${GREEN}ON${NC}"
@@ -196,12 +205,12 @@ echo -e "$COLOR1  $NC City           : $CITY                        "
 echo -e "$COLOR1  $NC Current Domain : $(cat /etc/xray/domain)          "
 echo -e "$COLOR1  $NC IP-VPS         : ${COLOR1}$IPVPS${NC}         "
 echo -e "$COLOR1 <<─────────────────────────────────────────────────────>>${NC}"
-echo -e "$COLOR1┌────────────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1│$NC [ SSH WS   : ${status_wst} ]  [ XRAY : ${status_xray} ]      [ NGINX : ${status_nginx} ]   $COLOR1│$NC"
-echo -e "$COLOR1│$NC                                                        $COLOR1│$NC"
-echo -e "$COLOR1│$NC [ SW-SHOCK : ${status_xray} ]  [ DROPBEAR : ${status_dropbear} ]                   $COLOR1│$NC"
-echo -e "$COLOR1│$NC                                                        $COLOR1│$NC"
-echo -e "$COLOR1└────────────────────────────────────────────────────────┘${NC}"
+echo -e "$COLOR1┌──────────────────────────────────────────────────────────┐${NC}"
+echo -e "$COLOR1│$NC [ SSH WS   : ${status_wst} ]  [ XRAY : ${status_xray} ]      [ NGINX : ${status_nginx} ]     $COLOR1│$NC"
+echo -e "$COLOR1│$NC                                                          $COLOR1│$NC"
+echo -e "$COLOR1│$NC [ SW-SHOCK : ${status_xray} ]  [ DROPBEAR : ${status_dropbear} ]  [ Slow DNS : ${status_sldns} ]  $COLOR1│$NC"
+echo -e "$COLOR1│$NC                                                          $COLOR1│$NC"
+echo -e "$COLOR1└──────────────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌───────────────────────────────────────────────────────────┐${NC}"
 echo -e "${COLOR1}│  [01]${NC} • SSHWS      [${YELLOW}Menu${NC}]   ${COLOR1}[08]${NC} • ALL SERVICE    [${YELLOW}Menu${NC}]  $COLOR1│$NC"    
 echo -e "${COLOR1}│  [02]${NC} • VMESS      [${YELLOW}Menu${NC}]   ${COLOR1}[09]${NC} • BACKUP         [${YELLOW}Menu${NC}]  $COLOR1│$NC"  
