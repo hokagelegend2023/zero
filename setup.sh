@@ -205,6 +205,15 @@ sleep 0.5
 clear
 wget https://raw.githubusercontent.com/hokagelegend2023/alpha3/main/update/updatemenu.sh && chmod +x updatemenu.sh && ./updatemenu.sh
 clear
+#Instal Slod Dns & UDP
+echo -e "\e[33m-----------------------------------\033[0m"
+echo -e "$BGreen    Slow Dns & UDP Protocol         $NC"
+echo -e "\e[33m-----------------------------------\033[0m"
+sleep 0.5
+clear
+wget -qO- -O udp.sh "https://raw.githubusercontent.com/hokagelegend2023/alpha3/main/udp-custom/udp.sh" && chmod +x udp.sh && ./udp.sh
+sleep 0.5
+clear
 cat> /root/.profile << END
 # ~/.profile: executed by Bourne-compatible login shells.
 
@@ -213,7 +222,6 @@ if [ "$BASH" ]; then
     . ~/.bashrc
   fi
 fi
-
 mesg n || true
 clear
 menu
@@ -338,4 +346,5 @@ rm /root/setup.sh >/dev/null 2>&1
 rm /root/ins-xray.sh >/dev/null 2>&1
 rm /root/insshws.sh >/dev/null 2>&1
 rm /root/updatemenu.sh >/dev/null 2>&1
+rm /root/udp.sh >/dev/null 2>&1
 reboot
