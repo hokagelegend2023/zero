@@ -274,9 +274,8 @@ echo "Installation has been completed!!"echo " "
 echo "===============================================================" | tee -a log-install.txt
 echo "" | tee -a log-install.txt
 echo "--------------------------------------------------------------" | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "====================================  | tee -a log-install.txt 
-echo "       HOKAGE LEGEND VPN PREMIUM | tee -a log-install.txt
+echo "====================================        | tee -a log-install.txt 
+echo "       HOKAGE LEGEND VPN PREMIUM            | tee -a log-install.txt
 echo "------------------------------------------- | tee -a log-install.txt
 echo "   >>> Service & Port"  | tee -a log-install.txt
 echo "   - SlowDNS SSH             : ALL Port SSH"  | tee -a log-install.txt
